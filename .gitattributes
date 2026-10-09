@@ -1,0 +1,3 @@
+# Preserve archived source bytes: source-manifest.json stores their SHA-256 hashes.
+research/sber/2024-08-08/sources/*.json -text -whitespace
+research/sber/2024-08-08/sources/*.html -text -whitespace

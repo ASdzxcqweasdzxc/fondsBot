@@ -1,0 +1,149 @@
+{
+  "schema_version": "0.1",
+  "dataset_id": "SBER-PUBLIC-2024-08-08-v0.1",
+  "input_sha256": {
+    "facts.json": "e06474174ee7c518cb3f78d63f12824875c7be24f2da630420d085c7cdd532ff",
+    "source-manifest.json": "a68393e68d047cd7baa5c9a8d7d6e2c974ac7362e86347cd5d9f3fc030bf92fc"
+  },
+  "archive_hashes_verified": 3,
+  "facts_count": 35,
+  "validation_scope": "Offline archive/provenance links and arithmetic only; not full rule/profile/strategy validation",
+  "calculations": [
+    {
+      "calculation_id": "REF-01",
+      "rule_id": "FA-003",
+      "input_fact_ids": [
+        "profit_h1_2024",
+        "profit_q1_2024"
+      ],
+      "expression": "816.1 - 397.4",
+      "value": "418.700000",
+      "unit": "billion_RUB",
+      "status": "REFERENCE_ONLY",
+      "matches_reported_fact_id": "profit_q2_2024"
+    },
+    {
+      "calculation_id": "REF-02",
+      "rule_id": "FA-003",
+      "input_fact_ids": [
+        "net_interest_income_h1_2024",
+        "net_interest_income_q1_2024"
+      ],
+      "expression": "1413.1 - 699.9",
+      "value": "713.200000",
+      "unit": "billion_RUB",
+      "status": "REFERENCE_ONLY",
+      "matches_reported_fact_id": "net_interest_income_q2_2024"
+    },
+    {
+      "calculation_id": "REF-03",
+      "rule_id": "FA-003",
+      "input_fact_ids": [
+        "operating_expenses_h1_2024",
+        "operating_expenses_q1_2024"
+      ],
+      "expression": "-480.3 - (-227.6)",
+      "value": "-252.700000",
+      "unit": "billion_RUB",
+      "status": "REFERENCE_ONLY",
+      "matches_reported_fact_id": "operating_expenses_q2_2024"
+    },
+    {
+      "calculation_id": "REF-04",
+      "rule_id": "FA-006",
+      "input_fact_ids": [
+        "operating_expenses_h1_2024",
+        "operating_income_pre_provisions_h1_2024"
+      ],
+      "expression": "abs(-480.3) / 1657.6 * 100",
+      "value": "28.975627",
+      "unit": "percent",
+      "status": "REFERENCE_ONLY",
+      "limitation": "Reported 29.0% matches one-decimal rounding; not evidence of investment attractiveness."
+    },
+    {
+      "calculation_id": "REF-05",
+      "rule_id": "FA-006",
+      "input_fact_ids": [
+        "nim_q2_2024_reported",
+        "nim_q1_2024_reported"
+      ],
+      "expression": "5.84 - 5.88",
+      "value": "-0.040000",
+      "unit": "percentage_points",
+      "status": "REFERENCE_ONLY",
+      "limitation": "Difference of reported quarterly ratios, not recalculated NIM."
+    },
+    {
+      "calculation_id": "REF-06",
+      "rule_id": "FA-007",
+      "input_fact_ids": [
+        "impaired_including_poci_2024_06",
+        "impaired_including_poci_2023_12_comparative"
+      ],
+      "expression": "3.5 - 3.4",
+      "value": "0.100000",
+      "unit": "percentage_points",
+      "status": "REFERENCE_ONLY",
+      "limitation": "Reported impaired loans including POCI, not pure Stage 3 or NPL."
+    },
+    {
+      "calculation_id": "REF-07",
+      "rule_id": "FA-007",
+      "input_fact_ids": [
+        "coverage_impaired_2024_06",
+        "coverage_impaired_2023_12_comparative"
+      ],
+      "expression": "127.2 - 142.2",
+      "value": "-15.000000",
+      "unit": "percentage_points",
+      "status": "REFERENCE_ONLY",
+      "limitation": "Reported coverage movement; numerator and denominator not independently recalculated."
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "D-EPS",
+      "input_fact_ids": [
+        "eps_q1_2024",
+        "eps_q2_2024",
+        "eps_h1_2024"
+      ],
+      "quarter_sum": "36.69",
+      "reported_half_year": "36.74",
+      "status": "DO_NOT_SUM_EPS",
+      "reason": "Quarter sum differs by 0.05 RUB. Weighted shares/holders need source reconciliation; no TTM EPS constructed."
+    },
+    {
+      "id": "D-N20-COMPARATIVE",
+      "input_fact_ids": [
+        "n20_0_2023_12_original",
+        "n20_0_2023_12_h1_comparative"
+      ],
+      "difference_pp": "0.1",
+      "status": "UNRESOLVED_COMPARATIVE_DIFFERENCE",
+      "reason": "Same historical date, 13.7 vs 13.8 in different releases. No explanation of revision obtained; no trend or headroom derived."
+    },
+    {
+      "id": "D-PRICE",
+      "input_fact_ids": [
+        "moex_close",
+        "moex_legal_close"
+      ],
+      "status": "DISTINCT_PRICE_FIELDS",
+      "reason": "CLOSE=281.09 and LEGALCLOSEPRICE=282.45 are distinct fields; no policy silently chooses one."
+    }
+  ],
+  "unavailable_calculations": [
+    "TTM_profit",
+    "profit_growth_yoy_calculated",
+    "ROE_TTM_calculated",
+    "normalized_profit",
+    "CoR_calculated",
+    "capital_headroom",
+    "SBER_P_E_TTM",
+    "SBER_P_B",
+    "dividend_yield",
+    "residual_income_value"
+  ]
+}

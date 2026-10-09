@@ -1,0 +1,112 @@
+{
+  "schema_version": "0.1",
+  "dataset_id": "SBER-PUBLIC-2024-08-08-v0.1",
+  "instrument_id": "MOEX:SBER",
+  "as_of": "2024-08-08T23:59:59+03:00",
+  "mode": "RESEARCH",
+  "availability_mode": "PUBLIC_AS_OF",
+  "horizon": "P12M",
+  "dataset_status": "DRAFT_PARTIAL",
+  "live_replay_supported": false,
+  "sources": [
+    {
+      "id": "SRC-SBER-FY2023",
+      "url": "https://www.e-disclosure.ru/portal/event.aspx?EventId=BODTj4por0aisrbwgKZ5iw-B-B",
+      "publisher": "ПАО Сбербанк",
+      "title": "Сокращенные результаты по МСФО за 2023 год",
+      "source_event_id": "e-disclosure:3043:3476571",
+      "published_at": "2024-02-28T17:36:00+03:00",
+      "publication_timezone_assumption": "Europe/Moscow",
+      "capture_method": "primary_page_via_web_tool_manual_numeric_extraction",
+      "capture_date": "2026-10-09",
+      "archive_path": null,
+      "original_sha256": null,
+      "replayability": "PARTIAL",
+      "archive_limitation": "Оригинал не сохранён: условия пресс-релиза требуют проверки допустимости архивирования; сохранены числовые факты и ссылки. Хэш оригинала отсутствует."
+    },
+    {
+      "id": "SRC-SBER-H1-2024",
+      "url": "https://e-disclosure.ru/portal/event.aspx?EventId=hEogjgTW3EyN72IwOilrtw-B-B&q=",
+      "publisher": "ПАО Сбербанк",
+      "title": "Сокращенные результаты по МСФО за 6 месяцев 2024 года",
+      "source_event_id": "e-disclosure:3043:3532716",
+      "published_at": "2024-08-08T13:37:00+03:00",
+      "publication_timezone_assumption": "Europe/Moscow",
+      "capture_method": "primary_page_via_web_tool_manual_numeric_extraction",
+      "capture_date": "2026-10-09",
+      "archive_path": null,
+      "original_sha256": null,
+      "replayability": "PARTIAL",
+      "archive_limitation": "Прямая загрузка получила HTTP 403. В условиях пресс-релиза указаны ограничения копирования/хранения; сохранены числовые факты, методические ограничения и ссылки, без копии текста."
+    },
+    {
+      "id": "SRC-SBER-H1-2023-CANDIDATE",
+      "url": "https://www.e-disclosure.ru/portal/event.aspx?EventId=ublu0FAwbkOuCRnfTrNsGQ-B-B",
+      "publisher": "ПАО Сбербанк",
+      "title": "Кандидат: результаты за 6 месяцев 2023 года",
+      "source_event_id": null,
+      "published_at": null,
+      "capture_date": "2026-10-09",
+      "capture_method": "source_discovery_only",
+      "archive_path": null,
+      "original_sha256": null,
+      "replayability": "PARTIAL",
+      "usable_for_reference": false,
+      "archive_limitation": "URL найден по ссылке в перепечатке; первичная страница недоступна (403). Значения и дата публикации не подтверждены первоисточником, в facts не включены."
+    },
+    {
+      "id": "SRC-MOEX-PRICE",
+      "url": "https://iss.moex.com/iss/history/engines/stock/markets/shares/boards/TQBR/securities/SBER.json?from=2024-08-08&till=2024-08-08&iss.meta=off",
+      "publisher": "Московская биржа",
+      "capture_method": "direct_https_original_response",
+      "retrieved_at": "2026-10-09T19:14:06.6100795Z",
+      "archive_path": "sources/moex-sber-2024-08-08.json",
+      "original_sha256": "044dff5ff4d712271ca31314155312db3be59a57dc3e30c709e6d7c4d0068b90",
+      "price_date": "2024-08-08",
+      "price_time_precision": "date",
+      "published_at": null,
+      "replayability": "PARTIAL",
+      "archive_limitation": "Ответ ISS сохранён полностью, но историческая редакция ответа и точный timestamp цены не подтверждены. Пригоден для ретроспективной арифметики; это не LIVE_REPLAY."
+    },
+    {
+      "id": "SRC-CBR-RATE",
+      "url": "https://www.cbr.ru/rbr/dir_decisions/rsd_2024-07-26_20_01/",
+      "publisher": "Банк России",
+      "capture_method": "direct_https_original_response",
+      "retrieved_at": "2026-10-09T19:15:35.0331708Z",
+      "decision_date": "2024-07-26",
+      "last_updated_date": "2024-07-31",
+      "published_at": null,
+      "availability_not_later_than_date": "2024-07-31",
+      "availability_basis": "Последнее обновление на официальной странице; точное время первой публикации не установлено.",
+      "archive_path": "sources/cbr-key-rate-2024-07-26.html",
+      "original_sha256": "41f6f2da48e4c178bd8d8423c12f290b9b98f96857bc66ef3c9b2d53ac5f77f9",
+      "replayability": "PARTIAL",
+      "archive_limitation": "Сохранён текущий ответ официальной страницы, историческая байтовая редакция не подтверждена. Дата доступности имеет точность до дня."
+    },
+    {
+      "id": "SRC-MOEX-IDENTITY-CURRENT",
+      "url": "https://iss.moex.com/iss/securities/SBER.json?iss.meta=off&iss.only=description",
+      "publisher": "Московская биржа",
+      "capture_method": "direct_https_original_response",
+      "retrieved_at": "2026-10-09T19:16:39.5784743Z",
+      "archive_path": "sources/moex-sber-description-current.json",
+      "original_sha256": "7005c0ab2fe1d9730ff7cbb29067bd9b5bad3b4a00700e52c90f8f7bf8c01329",
+      "historical_use": "reference_only",
+      "replayability": "PARTIAL",
+      "archive_limitation": "Текущая карточка, не исторический снимок. ISSUESIZE, сессии, листинг и прочие меняющиеся поля не используются на срезе 2024 года."
+    }
+  ],
+  "missing_sources": [
+    "Официально прочитанное раскрытие H1 2023 для TTM и YoY",
+    "Сопоставимый капитал владельцев на начало/конец TTM и аллокация по классам",
+    "Н20.0: действующие на дату нормативная методика, требования и надбавки",
+    "Исторические документы о дивидендных правах, решении, реестре и выплате"
+  ],
+  "notes": [
+    "Числовые факты извлечены вручную из первичных страниц; их копии не являются оригинальными документами.",
+    "Текущая карточка MOEX не подтверждает историческое число акций.",
+    "Времена публикации раскрытий прочитаны с портала; зона Europe/Moscow является явным допущением.",
+    "Хэши raw-ответов относятся к полученным в 2026 году байтам, а не к неподтверждённой исторической редакции."
+  ]
+}
